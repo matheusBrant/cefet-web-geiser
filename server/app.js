@@ -43,7 +43,7 @@ app.get('/', function(req, response) {
 // "data/jogosPorJogador.json", assim como alguns campos calculados
 // dica: o handler desta função pode chegar a ter ~15 linhas de código
 
-app.get('/jogador/:id', (req, res) => {
+app.get('/jogador/:id', (req, response) => {
   const dados = db.jogadores.players.find(f => f.steamid === req.params.id);  
   
   const result = {
@@ -56,7 +56,7 @@ app.get('/jogador/:id', (req, res) => {
 
   }
   
-  res.render('jogador', result);
+  response.render('jogador', result);
 });
 
 // EXERCÍCIO 1
